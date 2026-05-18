@@ -15,6 +15,7 @@ Phase 2 has completed:
 - Artifact constants module plus offline sanity test.
 - Artifact shape validator module plus offline sanity test.
 - Canonical artifact serialization plus offline stability test.
+- Payload hash boundary plus offline stability test.
 
 ## Latest Audit
 
@@ -27,6 +28,15 @@ Canonical serialization audit result:
 - Top-level artifact `security` is excluded from payload serialization.
 - Input objects are not mutated.
 
+Payload hash boundary result:
+
+- `hashArtifactPayload` hashes the canonical serialized artifact payload.
+- The hash uses built-in Node `crypto` only.
+- The returned hash is base64 SHA-256.
+- Top-level artifact `security` remains excluded through canonical serialization.
+- Input artifacts are not mutated.
+- Signing, signature verification, trusted issuer verification, and target project matching remain out of scope.
+
 ## Current Checks
 
 Current checks:
@@ -35,13 +45,13 @@ Current checks:
 - No dependencies have been added.
 - No lock files have been added.
 - No Base44 files or folders have been added.
-- No hashing, signing, signature verification, trusted issuer verification, or target project matching has been added.
+- No signing, signature verification, trusted issuer verification, or target project matching has been added.
 - No runtime, UI, AI, storage, cloud, or billing behavior has been added.
 - Guard/Fixer separation is preserved.
 
 ## Next Likely Target
 
-The next likely target should remain below full crypto authority: payload hash boundary planning or implementation.
+The next likely target should remain below execution authority: signing boundary planning or implementation.
 
 No next implementation decision is locked by this status document unless the roadmap and a future scoped prompt support it.
 
