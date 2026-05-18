@@ -12,4 +12,11 @@ Future cross-package and end-to-end test area.
 - Tests must not require billing.
 - Tests must not require deployment infrastructure.
 
+## Future Target Manifest Acceptance
+
+- Tests must eventually verify required manifest fields.
+- Tests must eventually verify `TARGET_PROJECT_MISMATCH` behavior.
+- Tests must remain offline.
+- Tests must not require UI, AI, cloud, billing, or deployment infrastructure.
+
 Future tests should verify the artifact and trust-boundary decisions before Guard or Fixer app logic is added.

@@ -19,4 +19,16 @@ Shared contract decisions for the Guard -> Fixer artifact trust boundary.
 - The issuer declared by an artifact is explicit but not self-trusted.
 - Fixer must reject artifacts from issuers outside its trusted allowlist.
 
+## Target Project Manifest
+
+- Manifest file name: `contract-project.json`
+- Required fields:
+  - `projectId`
+  - `name`
+- `projectId` must be present and non-empty.
+- `name` must be present and non-empty.
+- Explicit manifest identity is the Phase 1 project identity source.
+- Path hashing is not part of the Phase 1 project identity source.
+- Project-root hashing is not part of the Phase 1 project identity source.
+
 No contract enforcement logic is implemented here yet.
