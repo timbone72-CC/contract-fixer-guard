@@ -18,6 +18,7 @@ Phase 2 has completed:
 - Payload hash boundary plus offline stability test.
 - Artifact signing boundary plus offline sanity test.
 - Raw artifact signature verification boundary plus offline sanity test.
+- Trusted issuer verification boundary plus offline sanity test.
 
 ## Latest Audit
 
@@ -59,6 +60,15 @@ Raw artifact signature verification boundary result:
 - Input artifacts are not mutated.
 - Trusted issuer verification and target project matching remain out of scope.
 
+Trusted issuer verification boundary result:
+
+- `verifyTrustedIssuer` uses the top-level `issuer.id` plus `security.keyId`.
+- The trusted issuer allowlist is caller-provided data.
+- Trusted issuer and key id pairs return structured success.
+- Unknown issuer ids or mismatched key ids return `ISSUER_UNTRUSTED`.
+- Input artifacts and allowlists are not mutated.
+- Target project matching remains out of scope.
+
 ## Current Checks
 
 Current checks:
@@ -67,13 +77,13 @@ Current checks:
 - No dependencies have been added.
 - No lock files have been added.
 - No Base44 files or folders have been added.
-- No trusted issuer verification or target project matching has been added.
+- No target project matching has been added.
 - No runtime, UI, AI, storage, cloud, or billing behavior has been added.
 - Guard/Fixer separation is preserved.
 
 ## Next Likely Target
 
-The next likely target should remain below execution authority: trusted issuer verification or target project matching planning/implementation.
+The next likely target should remain below execution authority: target project matching planning/implementation.
 
 No next implementation decision is locked by this status document unless the roadmap and a future scoped prompt support it.
 
