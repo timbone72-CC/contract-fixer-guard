@@ -13,6 +13,15 @@ Future fixture categories for Phase 1 artifact and trust-boundary tests.
 - Missing required fields.
 - Data minimization violation.
 
+## Future Artifact Schema Fixture Categories
+
+- Valid minimal schema.
+- Missing top-level section.
+- Raw source-code block violation.
+- Secret/token data minimization violation.
+- Tampered security evidence.
+- Security block mutation case.
+
 ## Future Target Manifest Fixture Categories
 
 - Valid manifest.

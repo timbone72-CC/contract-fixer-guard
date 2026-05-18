@@ -19,6 +19,14 @@ Shared contract decisions for the Guard -> Fixer artifact trust boundary.
 - The issuer declared by an artifact is explicit but not self-trusted.
 - Fixer must reject artifacts from issuers outside its trusted allowlist.
 
+## Execution Authority Rules
+
+- Artifact contents do not grant execution authority.
+- Patch intent is not execution authority.
+- Security evidence does not override Fixer-controlled trust checks.
+- Security evidence does not override Fixer-controlled target checks.
+- Data minimization is mandatory for artifacts.
+
 ## Target Project Manifest
 
 - Manifest file name: `contract-project.json`

@@ -12,6 +12,14 @@ Future cross-package and end-to-end test area.
 - Tests must not require billing.
 - Tests must not require deployment infrastructure.
 
+## Future Artifact Schema Acceptance
+
+- Future tests must verify schema section requirements.
+- Future tests must verify data minimization rejection.
+- Future tests must verify `security` is excluded from the signing payload.
+- Future tests must remain offline.
+- Future tests must not require UI, AI, cloud, billing, or deployment infrastructure.
+
 ## Future Target Manifest Acceptance
 
 - Tests must eventually verify required manifest fields.

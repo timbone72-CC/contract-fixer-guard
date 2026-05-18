@@ -16,12 +16,36 @@ Shared diagnostic artifact constants for the Guard -> Fixer handoff.
 - `findings`
 - `security`
 
+## Section Responsibilities
+
+- `schemaVersion` identifies the artifact schema version.
+- `issuer` identifies the diagnostic producer but does not grant trust.
+- `target` identifies the intended target project.
+- `generatedAt` records artifact generation time.
+- `findings` contains minimal structural findings.
+- `security` contains:
+  - `payloadHash`
+  - `signature`
+  - `keyId`
+
 ## Content Rules
 
 - Findings must stay minimal and structural.
 - Findings must not include raw source-code blocks.
+- Findings must not include secrets, credentials, tokens, PII, or proprietary business logic beyond structural references.
 - Patch intent is not execution authority.
 - Patch intent may include only enough information for a later safe `REPLACE` proof.
+
+## Finding Shape Boundaries
+
+Findings may include:
+
+- Path.
+- Line.
+- Severity.
+- Rule id.
+- Summary.
+- Future patch intent.
 
 ## Target Identity Rules
 
@@ -30,4 +54,12 @@ Shared diagnostic artifact constants for the Guard -> Fixer handoff.
 - A mismatch must become `TARGET_PROJECT_MISMATCH`.
 - Artifact target identity does not replace the local `contract-project.json` manifest.
 
-No validation, canonical serialization, signing, or verification logic is implemented here yet.
+## Canonical Serialization And Signing Boundary
+
+- Deterministic serialization will be required later.
+- The signing payload excludes `security`.
+- `payloadHash` is computed from the canonical payload excluding `security`.
+- The signature covers that canonical payload/hash boundary.
+- `security` is evidence, not mutable working data.
+
+No validation, canonical serialization, hashing, signing, or verification logic is implemented here yet.
