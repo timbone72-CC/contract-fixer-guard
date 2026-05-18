@@ -2,7 +2,7 @@
 
 Future fixture categories for Phase 1 artifact and trust-boundary tests.
 
-## Planned Fixture Categories
+## Final Future Fixture Categories
 
 - Valid artifact.
 - Invalid signature.
@@ -11,7 +11,10 @@ Future fixture categories for Phase 1 artifact and trust-boundary tests.
 - Untrusted issuer.
 - Wrong schema version.
 - Missing required fields.
-- Data minimization violation.
+- Empty manifest fields.
+- Raw source-code block violation.
+- Secret/token data minimization violation.
+- Security block mutation case.
 
 ## Future Artifact Schema Fixture Categories
 

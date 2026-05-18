@@ -5,12 +5,13 @@ Future cross-package and end-to-end test area.
 ## Phase 1 Acceptance Notes
 
 - No tests are added yet.
-- Tests must run offline.
-- Tests must not require UI.
-- Tests must not require AI.
-- Tests must not require cloud services.
-- Tests must not require billing.
-- Tests must not require deployment infrastructure.
+- Future tests must run offline.
+- Future tests must not require UI, AI, cloud, billing, deployment, or Base44 runtime.
+- Future tests must verify artifact constants.
+- Future tests must verify target manifest contract.
+- Future tests must verify schema section requirements.
+- Future tests must verify data minimization rejection.
+- Future tests must verify signing payload excludes `security`.
 
 ## Future Artifact Schema Acceptance
 
