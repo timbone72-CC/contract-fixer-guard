@@ -7,6 +7,8 @@ Shared diagnostic artifact constants for the Guard -> Fixer handoff.
 - File name: `violations.json`
 - Schema version: `1.0.0`
 
+These values are exported by `constants.js` as inert shared constants.
+
 ## Required Top-Level Sections
 
 - `schemaVersion`

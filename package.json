@@ -4,6 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "check": "node --version"
+    "check": "node --version && node tests/artifact-constants.test.js"
   }
 }
