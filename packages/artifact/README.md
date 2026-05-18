@@ -9,6 +9,18 @@ Shared diagnostic artifact constants for the Guard -> Fixer handoff.
 
 These values are exported by `constants.js` as inert shared constants.
 
+## Shape Validator Boundary
+
+`validateArtifactShape.js` checks object shape only:
+
+- Artifact value is a plain object.
+- Required top-level sections exist.
+- `schemaVersion` matches the artifact constants.
+- `security` contains `payloadHash`, `signature`, and `keyId`.
+- `findings` is an array.
+
+The shape validator does not parse files, perform canonical serialization, hash payloads, sign artifacts, verify signatures, verify trusted issuers, match target projects, or grant execution authority.
+
 ## Required Top-Level Sections
 
 - `schemaVersion`
@@ -64,4 +76,4 @@ Findings may include:
 - The signature covers that canonical payload/hash boundary.
 - `security` is evidence, not mutable working data.
 
-No validation, canonical serialization, hashing, signing, or verification logic is implemented here yet.
+No canonical serialization, hashing, signing, verification, issuer trust, or target project matching logic is implemented here yet.
