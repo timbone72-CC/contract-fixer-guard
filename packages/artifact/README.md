@@ -76,4 +76,14 @@ Findings may include:
 - The signature covers that canonical payload/hash boundary.
 - `security` is evidence, not mutable working data.
 
-No canonical serialization, hashing, signing, verification, issuer trust, or target project matching logic is implemented here yet.
+## Canonical Serialization Boundary
+
+`canonicalSerialize.js` provides deterministic serialization for plain JSON-compatible values:
+
+- Object keys are sorted consistently.
+- Array order is preserved.
+- The top-level artifact `security` section is excluded by `canonicalSerializeArtifactPayload`.
+- Input values are not mutated.
+- Unsupported non-JSON-compatible values are rejected.
+
+The canonical serializer does not hash payloads, sign artifacts, verify signatures, verify trusted issuers, match target projects, read files, or grant execution authority.
