@@ -17,6 +17,7 @@ Phase 2 has completed:
 - Canonical artifact serialization plus offline stability test.
 - Payload hash boundary plus offline stability test.
 - Artifact signing boundary plus offline sanity test.
+- Raw artifact signature verification boundary plus offline sanity test.
 
 ## Latest Audit
 
@@ -48,6 +49,16 @@ Artifact signing boundary result:
 - Input artifacts are not mutated.
 - Signature verification, trusted issuer verification, and target project matching remain out of scope.
 
+Raw artifact signature verification boundary result:
+
+- `verifyArtifactSignature` recomputes the canonical payload hash before signature verification.
+- Payload hash mismatch returns `PAYLOAD_HASH_MISMATCH`.
+- Signature mismatch returns `SIGNATURE_INVALID`.
+- Valid signatures return a structured success result.
+- Top-level `security.keyId` does not affect raw cryptographic verification.
+- Input artifacts are not mutated.
+- Trusted issuer verification and target project matching remain out of scope.
+
 ## Current Checks
 
 Current checks:
@@ -56,13 +67,13 @@ Current checks:
 - No dependencies have been added.
 - No lock files have been added.
 - No Base44 files or folders have been added.
-- No signature verification, trusted issuer verification, or target project matching has been added.
+- No trusted issuer verification or target project matching has been added.
 - No runtime, UI, AI, storage, cloud, or billing behavior has been added.
 - Guard/Fixer separation is preserved.
 
 ## Next Likely Target
 
-The next likely target should remain below execution authority: signature verification boundary planning or implementation.
+The next likely target should remain below execution authority: trusted issuer verification or target project matching planning/implementation.
 
 No next implementation decision is locked by this status document unless the roadmap and a future scoped prompt support it.
 

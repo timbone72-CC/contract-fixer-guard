@@ -4,6 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "check": "node --version && node tests/artifact-constants.test.js && node tests/artifact-shape.test.js && node tests/canonical-serialize.test.js && node tests/artifact-hash.test.js && node tests/artifact-sign.test.js"
+    "check": "node --version && node tests/artifact-constants.test.js && node tests/artifact-shape.test.js && node tests/canonical-serialize.test.js && node tests/artifact-hash.test.js && node tests/artifact-sign.test.js && node tests/artifact-verify-signature.test.js"
   }
 }
